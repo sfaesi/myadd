@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!doctype html>
+<!-- Shabnam Faesi -->
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+ 
+<meta charset="utf-8">
+<link rel="File-List" href="adresboek_files/filelist.xml">
+ <script>
+        function changeText(){
+            var name = addPersonForm.name.value ;
+            var email = addPersonForm.email.value ;
+            if(name == "admin"){
+                document.getElementById("name").innerHTML = "Please fill in the Name field";
+            }else{
+                document.getElementById("name").innerHTML = '';
+            }
+ 
+            if(email){
+                filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (filter.test(email)) {
+                    document.getElementById("email").innerHTML = "";
+                }
+                else{
+                    document.getElementById("email").innerHTML = "Please fill in the email field";
+                }
+            }
+ 
+           // check kardane fild haee dakhele&#1670;&#1705; &#1705;&#1585;&#1583;&#1606; &#1601;&#1740;&#1604;&#1583;&#1607;&#1575;&#1740; &#1570;&#1606;
+        }
+    </script>
+
+<title>........... Address Book .........</title>
+<link rel="stylesheet" type="text/css" href="adresboek.css">
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+<body>
+	<div id="header">
+		<table border="0" width="100%" height="100%" bordercolor="#FFFFFF" cellspacing="0" cellpadding="0">
+			<tr>
+				<td align="center" background="images/518427253.jpg" style="border-color: #FFFFFF">
+		<h1>&nbsp;</h1>
+		<p>&nbsp;</p>
+				<h1 align="center">
+				<font face="Monotype Corsiva" color="#000066" style="font-size: 42pt"><!--[if gte vml 1]><v:shapetype id="_x0000_t136"
+ coordsize="21600,21600" o:spt="136" adj="10800" path="m@7,l@8,m@5,21600l@6,21600e">
+ <v:formulas>
+  <v:f eqn="sum #0 0 10800"/>
+  <v:f eqn="prod #0 2 1"/>
+  <v:f eqn="sum 21600 0 @1"/>
+  <v:f eqn="sum 0 0 @2"/>
+  <v:f eqn="sum 21600 0 @3"/>
+  <v:f eqn="if @0 @3 0"/>
+  <v:f eqn="if @0 21600 @1"/>
+  <v:f eqn="if @0 0 @2"/>
+  <v:f eqn="if @0 @4 21600"/>
+  <v:f eqn="mid @5 @6"/>
+  <v:f eqn="mid @8 @5"/>
+  <v:f eqn="mid @7 @8"/>
+  <v:f eqn="mid @6 @7"/>
+  <v:f eqn="sum @6 0 @5"/>
+ </v:formulas>
+ <v:path textpathok="t" o:connecttype="custom" o:connectlocs="@9,0;@10,10800;@11,21600;@12,10800"
+  o:connectangles="270,180,90,0"/>
+ <v:textpath on="t" fitshape="t"/>
+ <v:handles>
+  <v:h position="#0,bottomRight" xrange="6629,14971"/>
+ </v:handles>
+ <o:lock v:ext="edit" text="t" shapetype="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t136" alt="Address Book&#13;&#10;"
+ style='width:270.75pt;height:34.5pt' fillcolor="teal" strokecolor="#16c3cc"
+ strokeweight="1.5pt">
+ <v:fill opacity="55706f" color2="fill darken(118)" rotate="t" method="linear sigma"
+  type="gradient"/>
+ <v:stroke opacity="0"/>
+ <v:shadow on="t" color="#900"/>
+ <v:textpath style='font-family:"Impact";v-text-kern:t' trim="t" fitpath="t"
+  string="Address Book&#13;&#10;"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=369 height=51
+src="adresboek_files/image001.gif" alt="Address Book&#13;&#10;" v:shapes="_x0000_s1026"><![endif]></font></h1>
+		<p>
+				<!--[if gte vml 1]><v:rect
+ id="_x0000_s1025" alt="" style='width:454.5pt;height:2.25pt' fillcolor="maroon"
+ strokecolor="maroon"/><![endif]--><![if !vml]><img border=0 width=608
+height=5 src="adresboek_files/image002.gif" v:shapes="_x0000_s1025"><![endif]></p>
+	
+	<div id="navigation-bar" style="width: 715px; height: 117px">
+		<ul>
+			<li><button onClick="clickAdressBook()">Show the Address Book</button></li>
+			<li><button onClick="clickAddPerson()">Add New person</button></li>
+			<li><button onClick="pop.htm">
+			<a href="pop.htm" style="text-decoration: none"> Mijn Pop</a></button></li> 
+		 
+		</ul>
+	</div>
+	
+		<p align="center">&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" style="border-color: #FFFFFF">
+	
+	<div id="adress-table">
+		<table id="table" bgcolor="#3FA585">
+		<tr id ="table-head">
+	
+			<th id="name"><font face="Arial Black" size="2" color="#FFFFFF">Name</font></th>
+			<th id="address"><font face="Arial Black" size="2" color="#FFFFFF">Address</font></th>
+			<th id="living-place">
+			<font face="Arial Black" size="2" color="#FFFFFF">City</font></th>
+			<th id="phone-number">
+			<font face="Arial Black" size="2" color="#FFFFFF">Phone number</font></th>
+			<th id="email"><font face="Arial Black" size="2" color="#FFFFFF">Email</font></th>
+			<th id="editremove" bgcolor="#FFFFFF"><font face="Arial Black">&nbsp;<img border="0" src="images/user_edit.png" width="35" height="35" align="middle">&nbsp;&nbsp;
+			<img border="0" src="images/user_delete.png" width="35" height="35" align="middle"></font></th>
+		</tr>
+ 
+		</table>
+	</div>
+	<div id="add-person">
+ 
+
+ 
+		<form name="addPersonForm" id="add-person-form" onkeyup="changeText();"  method="post">
+			<div>
+				First name: <br>
+		    	<input type="text" name="firstname" placeholder="First name">
+			</div>
+			<div>
+				Last name: <br>
+				<input type="text" name="lastname" placeholder="Last name">
+			</div>
+			<div>
+				Address: <br>
+				<input type="text" name="address" placeholder="Address">
+			</div>
+			<div>
+				City: <br>
+				<input type="text" name="place" placeholder="Amsterdam">
+			</div>
+			<div>
+				Phone Number: <br>
+				<input type="digit" name="phone" placeholder="0611147116">
+			</div>
+			<div>
+				Email address: <br>
+				<input type="email" name="email" placeholder="shabnam@hotmail.com">
+			</div> &nbsp;<p>&nbsp;</p>
+			<div>
+				<input type="submit" value="Save" onClick="createPerson()"><input type="reset" value="Clear" name="B2">
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="Adresboek.js"></script>
+				<p>&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center" style="border-color: #FFFFFF">&nbsp;</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
